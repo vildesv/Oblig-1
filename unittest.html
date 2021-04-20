@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Unit tester</title>
+<link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.15.0.css">
+<body>
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
+    <script src="https://code.jquery.com/qunit/qunit-2.15.0.js"></script>
+    <script src="controller.js"></script>
+
+
+    <div id="app"></div>
+    <script>
+
+        var svartext = '';
+        var antall = 0;
+        var ferdigText = '';
+        var svar1 = false;
+        var svar2 = false;
+        var svar3 = false;
+        var svar4 = false;
+        var svar5 = false;
+
+        function updateView() {}
+        QUnit.test('test svar3', function(assert) {
+            svar('riktig', 3);
+            expected=svar3;
+            actual=true;
+            assert.equal(expected, actual);
+        });
+
+        QUnit.test('test svar1', function(assert) {
+        
+            svar('riktig', 1);
+            expected=svartext;
+            actual="Du svarte riktig på spørsmål 1";
+            assert.equal(expected, actual);
+        });
+
+        QUnit.test('test ferdig', function(assert) {
+            antall=5;
+            svar('feil', 5);
+            expected=ferdigText;
+            actual="Quizen er over";
+            assert.equal(expected, actual);
+        });
+
+
+
+
+    </script>
+</body>
